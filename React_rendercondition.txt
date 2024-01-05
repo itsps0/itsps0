@@ -1,0 +1,19 @@
+import { useState } from "react";
+import "./styles.css";
+
+export default function App() {
+  const [loggedIn, setloggedin] = useState(true);
+  const returnButton = () => {
+    setloggedin(!loggedIn);
+    // console.log("loggedIn", loggedIn);
+  };
+  console.log("loggedIn", loggedIn);
+  return (
+    <div>
+      <button onClick={returnButton}>
+        try {loggedIn ? "login" : "logout"}
+      </button>
+      <p> {loggedIn ? "welcome you have login in" : "please try again"}</p>
+    </div>
+  );
+}
