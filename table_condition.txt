@@ -1,0 +1,73 @@
+
+import "./styles.css";
+import { useState } from "react";
+export default function App() {
+  const [submit, setsubmit] = useState(true);
+  const returnbutton = () => {
+    setsubmit(!submit);
+  };
+  return (
+    <div className="App">
+      <div
+        style={{
+          backgroundColor: "yellow",
+          color: "red",
+          border: " 2px solid black",
+          borderRadius: "5px",
+          margin: "7px",
+        }}
+      >
+        Welcome to the Database
+      </div>
+      <div>
+        <table
+          style={{
+            border: submit ? "3px solid black" : "3px solid red",
+            width: "100%",
+          }}
+        >
+          <tr
+            style={{
+              border: "1px solid black",
+              backgroundColor: submit ? "green" : "blueviolet",
+            }}
+          >
+            <th style={{ border: "1px solid black" }}>Name</th>
+            <th style={{ border: "1px solid black" }}>E-mail</th>
+            <th style={{ border: "1px solid black" }}>Number</th>
+            <th style={{ border: "1px solid black" }}>Date</th>
+          </tr>
+          <tr style={{ background: submit ? "orange" : "pink" }}>
+            <td style={{ border: "1px solid black" }}>abc</td>
+            <td style={{ border: "1px solid black" }}>abc@ gmail.com</td>
+            <td style={{ border: "1px solid black" }}>6986669585</td>
+            <td style={{ border: "1px solid black" }}>2-2-2021</td>
+          </tr>
+          <tr style={{ background: submit ? "pink" : "orange" }}>
+            <td style={{ border: "1px solid black" }}>def</td>
+            <td style={{ border: "1px solid black" }}>def@ gmail.com</td>
+            <td style={{ border: "1px solid black" }}>8745254596</td>
+            <td style={{ border: "1px solid black" }}>7-5-2020</td>
+          </tr>
+          <tr style={{ background: submit ? "orange" : "pink" }}>
+            <td style={{ border: "1px solid black" }}>ghs</td>
+            <td style={{ border: "1px solid black" }}>ghs@ gmail.com</td>
+            <td style={{ border: "1px solid black" }}>6354789546</td>
+            <td style={{ border: "1px solid black" }}>5-7-2023</td>
+          </tr>
+          <tr style={{ background: submit ? "pink" : "orange" }}>
+            <td style={{ border: "1px solid black" }}>trf</td>
+            <td style={{ border: "1px solid black" }}>trf@ gmail.com</td>
+            <td style={{ border: "1px solid black" }}>9856542623</td>
+            <td style={{ border: "1px solid black" }}>6-9-2023</td>
+          </tr>
+        </table>
+      </div>
+      <button style={{ marginTop: "12px" }} onClick={returnbutton}>
+        {submit ? "submit" : "Reset"}
+      </button>
+
+      {submit ? <p>you have submitted</p> : <p> Try again later</p>}
+    </div>
+  );
+}
